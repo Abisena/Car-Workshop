@@ -1,0 +1,106 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:model",
+  "creation": "2025-05-15 10:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "model",
+    "brand",
+    "fuel_type",
+    "column_break_4",
+    "year_start",
+    "year_end"
+  ],
+  "fields": [
+    {
+      "fieldname": "model",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Model",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "brand",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Brand",
+      "options": "Vehicle Brand",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fuel_type",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Fuel Type",
+      "options": "Fuel Type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "year_start",
+      "fieldtype": "Int",
+      "label": "Production Year Start"
+    },
+    {
+      "fieldname": "year_end",
+      "fieldtype": "Int",
+      "label": "Production Year End"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2025-05-24 11:59:48.000000",
+  "modified_by": "dannyaudian",
+  "module": "Car Workshop",
+  "name": "Vehicle Model",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Workshop Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Technician",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
