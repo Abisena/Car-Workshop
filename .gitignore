@@ -1,6 +1,18 @@
-# Frappe apps are separate git repos (frappe, erpnext, hrms, garage,
-# imogi_finance, payroll_indonesia) — tracked/pushed individually, not here.
-apps/
+# Frappe framework/other apps are separate git repos with their own
+# upstream — tracked/pushed individually, not here.
+apps/frappe/
+apps/erpnext/
+apps/hrms/
+apps/imogi_finance/
+apps/payroll_indonesia/
+
+# apps/garage IS tracked here (its content is this repo's design work).
+# Its own .git/build artifacts are excluded below.
+apps/garage/.git/
+apps/garage/**/__pycache__/
+apps/garage/garage.egg-info/
+apps/garage/node_modules/
+apps/garage/garage-frontend/node_modules/
 
 # Site data: contains secrets (db_password, encryption_key) and private files.
 sites/
