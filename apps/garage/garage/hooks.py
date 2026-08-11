@@ -25,7 +25,7 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/garage/css/garage_desk.css?v=364"
+app_include_css = "/assets/garage/css/garage_desk.css?v=365"
 app_include_js = ["/assets/garage/js/route_aliases.js?v=1", "/assets/garage/js/garage_theme.js?v=75"]
 
 # include js, css files in header of web template
@@ -128,6 +128,7 @@ doctype_list_js = {
     "Activity Log": "public/js/activity_log_list.js",
     "Access Log": "public/js/access_log_list.js",
     "Attendance Request": "public/js/attendance_request_list.js",
+    "Attendance": "public/js/attendance_list.js",
     "Employee Checkin": "public/js/employee_checkin_list.js",
     "Shift Assignment": "public/js/shift_assignment_list.js",
     "Leave Allocation": "public/js/leave_allocation_list.js",
@@ -341,6 +342,18 @@ fixtures = [
     {
         "doctype": "Workspace",
         "filters": [["module", "=", "Garage"]],
+    },
+    {
+        # Employee Checkin listview badge text ("Off-Shift" -> "Non Shift")
+        # comes from hrms core's hardcoded __("Off-Shift") in
+        # employee_checkin_list.js, not the offshift field's label - a
+        # Property Setter on the field label (see below) doesn't touch it.
+        # Overriding the string via Translation is the only config-only way.
+        "doctype": "Translation",
+        "filters": [
+            ["source_text", "=", "Off-Shift"],
+            ["language", "=", "en"],
+        ],
     },
     {
         "doctype": "Print Format",
@@ -947,6 +960,10 @@ fixtures = [
                 "Customer-email_id-fieldtype",
                 "Customer-internal_customer_section-hidden",
                 "Customer-garage_profile_section-hidden",
+                "Employee Checkin-offshift-label",
+                "Attendance-main-field_order",
+                "Attendance-details_section-hidden",
+                "Attendance-column_break_18-hidden",
             ],
         ]],
     },
