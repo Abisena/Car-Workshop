@@ -1,0 +1,19 @@
+# Frappe apps are separate git repos (frappe, erpnext, hrms, garage,
+# imogi_finance, payroll_indonesia) — tracked/pushed individually, not here.
+apps/
+
+# Site data: contains secrets (db_password, encryption_key) and private files.
+sites/
+
+# Python virtualenv — regenerable, not source.
+env/
+
+# Runtime logs.
+logs/
+
+# Archived/old app copies (own git history elsewhere).
+archived/
+
+# Claude Code local session/settings state — settings.local.json has
+# DB credentials embedded in permission entries, must not be committed.
+.claude/
